@@ -135,3 +135,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email de teste console
+# https://docs.djangoproject.com/en/4.0/topics/email/
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+'''
+#Email produção
+
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = 'no-replay@fudion.com.br'
+EMAIL_HOST_PASSWORD = '123456'
+MAIL_PORT = 578
+MAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'contato@fudion.com.br
+
+'''
