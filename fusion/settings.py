@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import dj_database_url
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -74,6 +76,13 @@ WSGI_APPLICATION = 'fusion.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+#DataBase no Heroku
+DATABASES = {
+    'default': dj_database_url.config()
+}
+
+#Database local
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -84,6 +93,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+'''
 '''
 DATABASES = {
     'default': {
@@ -138,7 +148,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email de teste console
 # https://docs.djangoproject.com/en/4.0/topics/email/
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 '''
 #Email produção
@@ -151,3 +161,5 @@ MAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'contato@fudion.com.br
 
 '''
+
+LOGOUT_REDIRECT_URL = 'index'

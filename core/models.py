@@ -64,4 +64,16 @@ class Funcionario(Base):
 		
 		def __str__(self):
 			return self.nome
+
+class Feature(Base):
+	icone = models.CharField(max_length=12)
+	titulo = models.CharField(max_length=100)
+	descricao = models.CharField(max_length=200)
+
+	class Meta:
+		verbose_name = 'Feature'
+		verbose_name_plural = 'Features'
+
+	def __str__(self):
+		return self.titulo
 		
