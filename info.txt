@@ -58,5 +58,9 @@ Tests em django
 ->Executa o coverage html
 ->Abre o arquivo htmlcov/index.html
 (pode ser ececutado entrando no diretorio htmlcov e rodando o comando: python -m http.server)
+->Realiza os tests
+->Toda vez que executar um teste, deverá apagar o diretório htmlcov
+->Executa o coverage run manage.py test
+->Gera o relatório de testes novamente   -- coverage html
 
 
