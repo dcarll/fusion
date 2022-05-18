@@ -32,3 +32,31 @@ quit()
 python manage.py loaddata db.json
 sudo systemctl restart nginx && sudo systemctl restart gunicorn
 rm db*
+
+-----------------------------------------------------------------------
+Tests em django
+->apaga o test.py
+->cria o diretorio tests dentro do diretorio app
+->cria o arquivo test_models.py e os demais módulos a serem testados dentro do diretorio tests
+->Instala o model_mommy e coverage
+->Na rais do prjeto, cria o arquivo de configuração do coverge [.coveragerc]
+->Dentro o arquivo de configuração do coverage, adiciona a linha [run]
+                                                                    source = .
+                                                                    omit =
+                                                                        */__init__.py
+                                                                        */settings.py
+                                                                        */manage.py
+                                                                        */wsgi.py
+                                                                        */apps.py
+                                                                        */urls.py
+                                                                        */admin.py
+                                                                        */migrations.py
+                                                                        */tests/*
+->Executa o coverage run manage.py test
+->Executa o coverage report
+->Adiciona no .gitinore o htmlcov/*
+->Executa o coverage html
+->Abre o arquivo htmlcov/index.html
+(pode ser ececutado entrando no diretorio htmlcov e rodando o comando: python -m http.server)
+
+
