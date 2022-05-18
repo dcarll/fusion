@@ -40,7 +40,6 @@ class Servico(Base):
 		verbose_name_plural = 'Serviços'
 	def __str__(self):
 		return self.servico
-
 class Cargo(Base):
 	cargo = models.CharField(max_length=100)
 	
@@ -49,7 +48,6 @@ class Cargo(Base):
 		verbose_name_plural = 'Cargos'
 	def __str__(self):
 		return self.cargo
-
 class Funcionario(Base):
 	nome = models.CharField(max_length=100)
 	cargo = models.ForeignKey('core.Cargo', verbose_name='Cargo', on_delete=models.CASCADE)
@@ -63,6 +61,17 @@ class Funcionario(Base):
 	class Meta:
 		verbose_name = 'Funcionário'
 		verbose_name_plural = 'Funcionários'
+		
+	def __str__(self):
+		return self.nome
+			
+class Feature(Base):
+	nome = models.CharField(max_length=100)
+	descricao = models.CharField(max_length=300)
+	
+	class Meta:
+		verbose_name = 'Feature'
+		verbose_name_plural = 'Features'
 		
 	def __str__(self):
 		return self.nome
